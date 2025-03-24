@@ -547,6 +547,8 @@ I detta exempel har vi en `Bibliotek`-klass som innehåller en samling av `Bok`-
 
 Nu ska vi bygga ett enkelt bibliotekssystem med klasser som du kan testa i main-metoden. Vi delar upp detta i flera övningar som bygger på varandra.
 
+Använd endast engelska namn på attribut och metoder.
+
 ### Övning 1: Skapa Bok-klassen
 
 Skapa en klass `Bok` med följande attribut:
@@ -559,7 +561,6 @@ Skapa en klass `Bok` med följande attribut:
 Implementera:
 - En konstruktor som tar titel, författare, antalSidor och isbn
 - En konstruktor som bara tar titel och författare (sätt antalSidor till 100 och generera ett slumpmässigt ISBN)
-- Getters och setters för alla attribut
 - En metod `lånUt()` som ändrar utlånad till true
 - En metod `lämnaTillbaka()` som ändrar utlånad till false
 - En metod `ärTillgänglig()` som returnerar true om boken inte är utlånad
@@ -570,7 +571,7 @@ Implementera:
 
 Skapa en klass `Bibliotek` med följande attribut:
 - namn (String)
-- böcker (Bok[]) - en array som kan lagra upp till 100 böcker
+- böcker - en ArrayList som kan lagra böcker (Komposition)
 - antalBöcker (int) - håller reda på hur många böcker som finns i arrayen
 
 Implementera:
