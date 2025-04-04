@@ -28,29 +28,43 @@ public class Game {
 
         System.out.println(player.name + " möter en " + e.name + "! Striden börjar!");
         System.out.println();
-        combat(e);
-
+        combat(player,e);
 
     }
 
-    public void combat(Enemy e){
+    public void combat(Actor firstActor, Actor secondActor){
+
+        Actor currentActor;
+        if(Math.random() > 0.5){
+            currentActor = firstActor;
+        } else currentActor = secondActor;
 
         while(true){
-            player.basicAttack(e);
-            if(e.getHealth() <= 0){
-                System.out.println(e.getName() + " dog");
-                break;
+            if(currentActor.equals(firstActor)){
+                boolean targetIsAlive = firstActor.basicAttack(secondActor);
+                if(!targetIsAlive){
+                    break;
+                }
+
+            } else {
+                boolean targetIsAlive = secondActor.basicAttack(firstActor);
+                if(!targetIsAlive){
+                    break;
+                }
             }
-            e.basicattack(player);
-            if(player.getHealth() <= 0){
-                System.out.println(player.getName() + " dog");
-                break;
+            System.out.println();
+
+            if (currentActor.equals(firstActor)){
+
+                currentActor = secondActor;
+            } else {
+                currentActor = firstActor;
+
             }
 
-            System.out.println();
         }
 
-
+        System.out.println("combat over...");
 
     }
 }

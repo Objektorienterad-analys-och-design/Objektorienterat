@@ -6,9 +6,9 @@ public class Goblin extends Enemy{
     }
 
     @Override
-    public void basicattack(Player player) {
+    public boolean basicattack(Actor enemy) {
         System.out.println(this.name + " sticker med en dolk");
-        player.takeDamage(this.damage);
+       return super.basicAttack(enemy);
     }
 
 

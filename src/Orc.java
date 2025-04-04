@@ -4,8 +4,10 @@ public class Orc extends Enemy{
     }
 
     @Override
-    public void basicattack(Player player) {
+    public boolean basicattack(Actor player) {
         System.out.println(this.name + " svingar med en yxa!");
-        player.takeDamage(this.damage);
+        return super.basicAttack(player);
     }
+
+
 }

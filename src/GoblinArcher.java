@@ -6,10 +6,12 @@ public class GoblinArcher extends Enemy implements RangedUnit{
     }
 
     @Override
-    public void basicattack(Player player) {
+    public boolean basicattack(Actor player) {
         System.out.println(this.name + " hugger med ett kortsvärd!");
-        player.takeDamage(this.damage);
+        return super.basicAttack(player);
     }
+
+
 
     @Override
     public void rangedAttack(Player player) {

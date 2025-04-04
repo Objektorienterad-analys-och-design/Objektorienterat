@@ -8,9 +8,9 @@ public class SkeletonArcher extends Enemy implements RangedUnit{
     }
 
     @Override
-    public void basicattack(Player player) {
+    public boolean basicAttack(Actor enemy) {
         System.out.println(this.name + " hugger med ett svärd!");
-        player.takeDamage(this.damage);
+        return super.basicAttack(enemy);
     }
 
     @Override

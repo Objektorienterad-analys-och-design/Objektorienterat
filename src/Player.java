@@ -1,34 +1,19 @@
 import java.util.Random;
 
-public class Player {
-
-    protected String name;
-    protected int health;
-    protected int damage;
+public class Player extends Actor{
 
     public Player(String name, int health, int damage) {
-        this.name = name;
-        this.health = health;
-        this.damage = damage;
+        super(name, health, damage);
+
     }
 
-    public void basicAttack(Enemy enemy){
-
-
+    @Override
+    public boolean basicAttack(Actor enemy){
         System.out.println("Spelaren " + this.name + " attackerar " + enemy.name);
-        Random rng = new Random();
-        int variance = rng.nextInt(-2,3);
-        int trueDamage = damage + variance;
-        enemy.takeDamage(trueDamage);
+        return super.basicAttack(enemy);
 
     }
 
-    public void takeDamage(int damage){
-        this.health -= damage;
-        System.out.println(this.name + " tog " + damage + " i skada.");
-        System.out.println(this.name + " hälsa är nu " + this.health);
-
-    }
 
     public String getName() {
         return name;
